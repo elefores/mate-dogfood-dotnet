@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MateDogfood</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      FluentValidation is pinned on the 9.x line ON PURPOSE. `CascadeMode.StopOnFirstFailure`
+      was deprecated in 9 and REMOVED in 11 (replaced by `CascadeMode.Stop`), so upgrading
+      across the gap is a breaking change that forces `src/CustomerValidator.cs` to change.
+      This exercises keepup's AI code-upgrade path, not just a version bump.
+    -->
+    <PackageReference Include="FluentValidation" Version="9.5.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Serilog" Version="2.12.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+  </ItemGroup>
+
+</Project>

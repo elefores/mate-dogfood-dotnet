@@ -1,0 +1,19 @@
+# keepup (MATE / Keep Up) configuration.
+#
+# This file shows a version-constrained dependency rule alongside the usual
+# include / ignore / thresholds / agent sections.
+
+[include]
+languages = ["csharp"]
+paths = ["**/*.csproj"]
+
+[ignore]
+# Pin the logging sink to the 4.x line and leave the console sink alone.
+dependencies = ["Serilog.Sinks.Console >= 5.0.0"]
+
+[thresholds]
+file = 2
+folder = 5
+
+[agent]
+name = "claude-code"
